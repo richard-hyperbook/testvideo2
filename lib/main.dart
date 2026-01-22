@@ -22,7 +22,7 @@ class _VideoAppState extends State<VideoApp> {
       // Uri.parse(
       //   'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
       // ),
-        'assets/videos/woodland1.mov'
+        'assets/videos/woodland3.mp4'
     )
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
