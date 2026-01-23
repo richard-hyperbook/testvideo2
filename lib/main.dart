@@ -54,6 +54,9 @@ class _VideoAppState extends State<VideoApp> {
             height: 800,
             child: Column(
               children: [
+                const Image(
+                  image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+                ),
                 Container(
                   color: Colors.lime,
                   width: 900,
