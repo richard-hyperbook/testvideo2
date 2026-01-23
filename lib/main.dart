@@ -19,11 +19,11 @@ class _VideoAppState extends State<VideoApp> {
     super.initState();
 
     _controller =
-        VideoPlayerController.asset(
-            // Uri.parse(
-            //   'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
-            // ),
-            'assets/videos/woodland7.mp4',
+        VideoPlayerController.networkUrl(
+             Uri.parse(
+               'https://tin.syi.mybluehost.me/images/woodland7.mp4',
+             ),
+            //'assets/videos/woodland7.mp4',
           )
           ..initialize().then((_) {
             // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
@@ -56,6 +56,8 @@ class _VideoAppState extends State<VideoApp> {
               children: [
                 const Image(
                   image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+                  height: 100,
+                  width: 100,
                 ),
                 Container(
                   color: Colors.lime,
@@ -63,12 +65,12 @@ class _VideoAppState extends State<VideoApp> {
                   height: 100,
                   child: Image.asset('assets/images/tomb1.png'),
                 ),
-               /* _controller.value.isInitialized
+                _controller.value.isInitialized
                     ? AspectRatio(
                         aspectRatio: _controller.value.aspectRatio,
                         child: VideoPlayer(_controller),
                       )
-                    : Container(),*/
+                    : Container(),
                 Text('XXX'),
               ],
             ),
