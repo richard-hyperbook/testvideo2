@@ -60,12 +60,13 @@ class _VideoAppState extends State<VideoApp> {
                   height: 100,
                   child: Image.asset('assets/images/tomb1.png'),
                 ),
-                _controller.value.isInitialized
+               /* _controller.value.isInitialized
                     ? AspectRatio(
                         aspectRatio: _controller.value.aspectRatio,
                         child: VideoPlayer(_controller),
                       )
-                    : Container(),
+                    : Container(),*/
+                Text('XXX'),
               ],
             ),
           ),
