@@ -18,16 +18,17 @@ class _VideoAppState extends State<VideoApp> {
   void initState() {
     super.initState();
 
-    _controller = VideoPlayerController.asset(
-      // Uri.parse(
-      //   'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
-      // ),
-        'assets/videos/woodland7.mp4'
-    )
-      ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        setState(() {});
-      });
+    _controller =
+        VideoPlayerController.asset(
+            // Uri.parse(
+            //   'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
+            // ),
+            'assets/videos/woodland7.mp4',
+          )
+          ..initialize().then((_) {
+            // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+            setState(() {});
+          });
     /* _controller =
     VideoPlayerController.networkUrl(
       Uri.parse(
@@ -47,14 +48,27 @@ class _VideoAppState extends State<VideoApp> {
     return MaterialApp(
       title: 'Video Demo',
       home: Scaffold(
-        body: Center(
-          child:
-          _controller.value.isInitialized
-              ? AspectRatio(
-            aspectRatio: _controller.value.aspectRatio,
-            child: VideoPlayer(_controller),
-          )
-              : Container(),
+        body: SingleChildScrollView(
+          child: Container(
+            width: 1000,
+            height: 800,
+            child: Column(
+              children: [
+                Container(
+                  color: Colors.lime,
+                  width: 900,
+                  height: 100,
+                  child: Image.asset('assets/images/tomb1.png'),
+                ),
+                _controller.value.isInitialized
+                    ? AspectRatio(
+                        aspectRatio: _controller.value.aspectRatio,
+                        child: VideoPlayer(_controller),
+                      )
+                    : Container(),
+              ],
+            ),
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
